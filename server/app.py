@@ -11,7 +11,7 @@ import numpy as np
 from sqlalchemy import insert
 from sqlalchemy import create_engine,text,Table,select
 from flask import Response
-from classes.forecast import Forecast
+from server.classes.forecast import Forecast
 import datetime
 
 load_dotenv()
