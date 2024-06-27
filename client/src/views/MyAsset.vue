@@ -43,7 +43,6 @@ import ModalButton from '../components/ModalButton.vue';
 
 import { supabase } from "../clients/supabase";
 import AddWellModal from '../components/AddWellModal.vue';
-import { c } from 'naive-ui';
 const { data: { user } } = await supabase.auth.getUser()
 const initials = user.user_metadata.firstName[0] + user.user_metadata.lastName[0]
 const fullName = user.user_metadata.firstName + ' ' + user.user_metadata.lastName
