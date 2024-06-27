@@ -52,14 +52,14 @@ const store = createStore({
     actions:{
         async get_wells({commit}, payload){
 
-            const response = await axios.get('https://0.0.0.0:5000/lookup_wells', {responseType:'json','params':{
+            const response = await axios.get('https://minrights-2a2dafcd95af.herokuapp.com/lookup_wells', {responseType:'json','params':{
                 'apis': payload.apis,
                 'user_id': payload.user_id}});
             commit('set_wells', response.data);
 
         },
         async load_assets({commit},payload){
-            const response = await axios.get('https://0.0.0.0:5000/get_assets', {responseType:'json',headers:{'Content-Type':'application/json'},'params':{
+            const response = await axios.get('https://minrights-2a2dafcd95af.herokuapp.com/get_assets', {responseType:'json',headers:{'Content-Type':'application/json'},'params':{
                 'user_id': this.state.user.user.user_id,'api':payload.api}});
             console.log(response.data);
             commit('set_asset_wells', response.data.well_data);
