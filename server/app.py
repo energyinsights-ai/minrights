@@ -352,10 +352,6 @@ def get_well_table():
     out_data = {'well_data':well_data,'prod_data':prod_data}
     return out_data
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=5000)
-
-
 from flask import Flask, send_from_directory
 import os
 

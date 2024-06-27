@@ -108,14 +108,14 @@ export default {
 
     },
     async loadwells(event) {
-        this.loading = true
-        await axios.post('http://0.0.0.0:5000/addwells', {wells:this.$store.state.wells,user_id:user.id})
-        .then(response => {
-            this.$store.commit('run_wells',response.data)
-        })
-        this.loading = false
-        this.$store.dispatch('load_assets')
-        this.closeDialog()
+        // this.loading = true
+        // await axios.post('http://0.0.0.0:5000/addwells', {wells:this.$store.state.wells,user_id:user.id})
+        // .then(response => {
+        //     this.$store.commit('run_wells',response.data)
+        // })
+        // this.loading = false
+        // this.$store.dispatch('load_assets')
+        // this.closeDialog()
     }
     
   },

@@ -52,14 +52,14 @@
 				})
 				const my_id = data.user.id
 				
-				const response = await axios.post('http://0.0.0.0:5000/register', {
-					'id': my_id,
-					'first_name': this.firstName,
-					'last_name': this.lastName,
-					'email': this.email
-				})
-				alert('Account created, please login')
-				this.$router.push('/login');
+				// const response = await axios.post('http://0.0.0.0:5000/register', {
+				// 	'id': my_id,
+				// 	'first_name': this.firstName,
+				// 	'last_name': this.lastName,
+				// 	'email': this.email
+				// })
+				// alert('Account created, please login')
+				// this.$router.push('/login');
 			}
 		}
 	}
