@@ -15,7 +15,7 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    outDir:'../backend/static',
+    outDir:'../server/static',
     emptyOutDir: true
   },
   // server: {
