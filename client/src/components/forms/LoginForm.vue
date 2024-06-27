@@ -26,7 +26,6 @@
 <script>
 import MyButton from '../MyButton.vue';
 import { supabase } from "../../clients/supabase";
-import { c } from 'naive-ui';
 export default {
   data() {
     return {
