@@ -14,19 +14,21 @@ export default defineConfig({
     }
   },
   build: {
-    target: 'esnext' //browsers can handle the latest ES features
+    target: 'esnext',
+    outDir:'../backend/static',
+    emptyOutDir: true
   },
-  server: {
-    host: '0.0.0.0', // Ensure Vite is listening on all interfaces
-    port: 5173,
-    proxy: {
-      '/api': {
-        target: 'http://backend:5000',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
-      }
-    }
-  },
+  // server: {
+  //   host: '0.0.0.0', // Ensure Vite is listening on all interfaces
+  //   port: 5173,
+  //   proxy: {
+  //     '/': {
+  //       target: 'http://backend:5000',
+  //       changeOrigin: true,
+  //       rewrite: path => path.replace(/^\/api/, '')
+  //     }
+  //   }
+  // },
   scripts: {
     build: 'vite build',
     serve: 'vite preview'
