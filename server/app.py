@@ -8,7 +8,6 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
 import numpy as np
-from models import Users
 from sqlalchemy import insert
 from sqlalchemy import create_engine,text,Table,select
 from flask import Response
@@ -26,6 +25,25 @@ db = SQLAlchemy(app)
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
+from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
+from sqlalchemy import PrimaryKeyConstraint
+from sqlalchemy import Table
+from sqlalchemy import orm
+from sqlalchemy.orm import reconstructor
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class Users(Base):
+    __tablename__ = "users"
+    __table_args__={'schema':'minrights'}
+
+    user_id: Mapped[str] = mapped_column(primary_key=True)
+    first_name: Mapped[str]
+    last_name: Mapped[str]
+    email: Mapped[str]
 
 engine = db.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 sql = '''
